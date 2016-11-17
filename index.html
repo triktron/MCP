@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>MCP</title>
+  <meta name="description" content="MCP">
+  <meta name="author" content="Triktron">
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <link rel="stylesheet" href="css/old.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <script src="js/dragend.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+
+<body>
+  <div class="lower-part">
+    current track list
+  </div>
+
+  <div class="upper-part">
+    <div class="shadow"></div>
+    <div class="header">
+      <icon class="material-icons menu">menu</icon>
+      <div class="search">
+        <icon class="material-icons">search</icon>
+        <input placeholder="Search music"></input>
+      </div>
+      <div class="cards">
+        <div class="active-card"></div>
+        <div class="card" page=1>
+          <div>PLAYLIST</div>
+        </div>
+        <div class="card" page=2>
+          <div>ARTISTS</div>
+        </div>
+        <div class="card" page=3>
+          <div>ALBUMS</div>
+        </div>
+        <div class="card" page=4>
+          <div>SONGS</div>
+        </div>
+        <div class="card" page=5>
+          <div>GENRES</div>
+        </div>
+      </div>
+    </div>
+    <div class="panels">
+      <div class="dragend-page" panel="playlist">
+        PLAYLIST
+      </div>
+      <div class="dragend-page" panel="artists">
+        ARTISTS
+      </div>
+      <div class="dragend-page" panel="albums">
+        ALBUMS
+      </div>
+      <div class="dragend-page" panel="songs">
+
+
+
+        <div class="clusterize">
+          <table>
+            <thead>
+              <tr>
+                <th>name</th>
+                <th><icon class="material-icons menu">query_builder</icon></th>
+                <th>artist</th>
+                <th>album</th>
+                <th><icon class="material-icons menu">audiotrack</icon></th>
+              </tr>
+            </thead>
+          </table>
+          <div id="scrollArea" class="clusterize-scroll">
+            <table>
+              <tbody id="contentArea" class="clusterize-content">
+                <tr class="clusterize-no-data">
+                  <td>Loading data…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="dragend-page" panel="genres">
+        GENRES
+      </div>
+    </div>
+    <div class="nav">
+    </div>
+  </div>
+  <div class="player">
+    <div class="time">
+      <div class="done"></div>
+      <input type="range" value=30 min=0 max=100 step=.00001 oninput="this.previousElementSibling.style.width = this.value + '%'" onchange="this.previousElementSibling.style.width = this.value + '%'">
+    </div>
+    <div class="cover"><img></img</div>
+    <div class="song-info">
+      <div class="title">Ballin'</div>
+      <div class="artist-and-album">Grabbitz - Don't stop</div>
+    </div>
+    <div class="controls">
+      <icon class="material-icons">repeat</icon>
+      <icon class="material-icons">skip_previous</icon>
+      <icon class="material-icons play">play_circle_filled</icon>
+      <icon class="material-icons">skip_next</icon>
+      <icon class="material-icons">shuffle</icon>
+    </div>
+    <div class="right-controls">
+      <icon class="material-icons">volume_up</icon>
+      <icon class="material-icons playlist-icon">queue_music</icon>
+    </div>
+  </div>
+</body>
+
+</html>

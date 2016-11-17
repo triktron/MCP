@@ -1,0 +1,265 @@
+.cards, .cards * {
+   margin: 0 !important;
+}
+
+.cards {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 65px;
+}
+.card {
+    font-size: 15px;
+    display: inline-block;
+    height: 25px;
+    width: 65px;
+    border-bottom-width: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.active.card {
+  border-bottom: #FFF 2px solid;
+}
+.panels {
+  position: absolute;
+  top: 100px;
+  color: black;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.upper-part {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 70px;
+}
+.player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  color: #000;
+    transition: bottom ease 300ms;
+}
+.right-controls {
+    position: absolute;
+    right: 27px;
+    top: 50%;
+    margin-top: -12px;
+}
+
+.controls {
+    position: absolute;
+    right: 50%;
+    margin-right: -110px;
+    top: 50%;
+    margin-top: -24px;
+}
+
+.controls icon{
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.right-controls icon{
+    padding: 5px;
+}
+
+.song-info {
+    position: absolute;
+    left: 76px;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+}
+
+.artist-and-album {
+    color: rgba(0,0,0,.7);
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+}
+
+.title {
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+.play {
+  font-size: 48px;
+    color: #02a8f3;
+}
+.time {
+    position: absolute;
+    left: 70px;
+    right: 0;
+    top: 0;
+    height: 3px;
+}
+
+.time .done {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background: #02a8f3;
+}
+.time:hover > .nob, .time .done:hover + .nob, .time .nob:hover {
+  height: 9px;
+  width: 9px;
+  margin-top: -3px;
+  margin-left: -4.5px;
+}
+.nob {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    background-color: #02a8f3;
+    margin-top: 1.5px;
+    margin-left: 0px;
+    left: 30%;
+    border-radius: 50%;
+    transition: height 300ms, width 300ms, margin-top 300ms, margin-left 300ms;
+}
+
+
+@media screen and ( max-width: 870px) {
+  .search {
+    margin-left: 235px;
+  }
+}
+@media screen and ( max-width: 430px) {
+  .song-info {
+    display: none;
+  }
+}
+@font-face {
+  font-family: 'OpenSans Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/OpenSans-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+
+ /*    playfild        */
+
+.songs {
+    padding: 15px;
+    text-align: left;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.panel[panel=songs] table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.songs.duration {
+  width: 24px;
+}
+
+.clusterize {
+  height: 100%;
+}
+
+.clusterize-scroll{
+height: calc(100% - 33px);
+  overflow: auto;
+}
+
+/* By default extra tag .clusterize-keep-parity added to keep parity of rows.
+ * Useful when used :nth-child(even/odd)
+ */
+.clusterize-extra-row.clusterize-keep-parity{
+  display: none;
+}
+
+/* During initialization clusterize adds tabindex to force the browser to keep focus
+ * on the scrolling list, see issue #11
+ * Outline removes default browser's borders for focused elements.
+ */
+.clusterize-content{
+    outline: 0;
+}
+
+/* centering message that appears when no data provided
+ */
+.clusterize-no-data td{
+  text-align: center;
+}
+
+.clusterize-scroll tr td {
+  text-overflow: ellipsis;
+  overflow: hidden;
+    padding: 3px;
+}
+
+.clusterize tr th:nth-child(1), .clusterize-scroll tr td:nth-child(1) {
+  width: 38%;
+  left: 0%;
+}
+.clusterize tr th:nth-child(2), .clusterize-scroll tr td:nth-child(2) {
+  width: 5%;
+  left: 38%;
+}
+.clusterize tr th:nth-child(3), .clusterize-scroll tr td:nth-child(3) {
+  width: 26%;
+  left: 64%;
+}
+.clusterize tr th:nth-child(4), .clusterize-scroll tr td:nth-child(4) {
+  width: 26%;
+  left: 90%;
+}
+.clusterize tr th:nth-child(5), .clusterize-scroll tr td:nth-child(5) {
+  width: 5%;
+  left: 95%;
+}
+
+.card:nth-child(1) {
+    margin-left: 10px;
+}
+
+.cover img {
+  /*position: absolute;*/
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 70px;
+}
+
+
+.active-card {
+  position: fixed;
+  margin: 0px;
+  background-color: red;
+  height: 2px;
+  transition: left 100ms;
+}

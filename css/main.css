@@ -1,0 +1,165 @@
+/*  main page  */
+
+body {
+  color: #FFF;
+  font-family: 'OpenSans Light';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -ms-touch-action: manipulation; /* IE10  */
+  touch-action: manipulation; /* IE11+ */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body:not(.search) {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -moz-user-select: none; /* Firefox */
+}
+
+/* all the header stuff*/
+
+.header {
+  background-color: #02a8f3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100px;
+  display: inline-flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25)
+}
+.header * {
+  margin: 20px
+}
+
+/* the slide menu */
+
+.nav {
+  position: absolute;
+  left: -300px;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #FFF;
+  z-index: 1;
+  transition: left 400ms ease;
+}
+.nav.open {
+  left: 0;
+}
+
+/* the slide menu btn */
+
+.menu {
+  cursor: pointer;
+}
+
+/* the shadow if the slide menu is open */
+
+.shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 300ms, z-index 300ms;
+}
+.shadow.active {
+  opacity: .4;
+  z-index: 1;
+}
+
+/* the searche bar */
+
+.search {
+  background-color: #34a0db;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 400px;
+  height: 40px;
+  border-radius: 3px;
+  transition: width cubic-bezier(0.68, -0.55, 0.27, 1.55) 300ms;
+}
+.search input {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  margin: 0;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFF
+}
+.search input::-webkit-input-placeholder {
+  color: #FFF;
+}
+.search icon {
+  position: absolute;
+  margin: 8px;
+}
+
+/* the player bar */
+
+
+/* slider */
+
+.time input {
+  -webkit-appearance: none;
+  z-index: 1;
+  position: absolute;
+  left: -5px;
+  top: -10px;
+  width: calc(100% + 5px);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/* if page size */
+
+@media screen and ( max-width: 520px) {
+  /* the searche bar */
+  .search {
+    margin-left: 60px;
+    width: calc(100% - 70px);
+  }
+}
+
+/* lower part */
+.lower-part {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 70px);
+  left: 0;
+  top: 100%;
+  transition: top ease 300ms;
+  background-color: #FFF;
+  z-index: 1;
+  color: #000;
+}
+.lower-part.active {
+  top: 70px;
+}
+
+.lower-part.active ~ .player {
+  bottom: calc(100% - 70px)
+}
