@@ -33,7 +33,7 @@ body:not(.search) {
   left: 0;
   top: 0;
   right: 0;
-  height: 100px;
+  height: 85px;
   display: inline-flex;
   box-shadow: 0 0 10px rgba(0, 0, 0, .25)
 }
