@@ -119,12 +119,79 @@ body:not(.search) {
 
 /* the player bar */
 
+/* vomume*/
+.volume {
+    position: absolute;
+    top: -5px;
+    background-color: #f2f2f2;
+    width: 36px;
+    left: -2px;
+    border: #ccc solid 1px;
+    height: 0;
+    transition: height ease 300ms, top ease 300ms, opacity ease 300ms;
+    opacity: 0;
+}
+
+.volume div {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+}
+
+.volume.open {
+  height: 105px;
+  top: -110px;
+    opacity: 1;
+  transition: height ease 300ms, top ease 300ms, opacity ease 50ms;
+}
+
+.volume.open input {
+  width: 100px;
+}
+
+.volume input {
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: none; /* WebKit */
+    height: 8px;
+    width: 0;
+    padding: 12px 0px;
+    transform: rotate(-90deg);
+    margin: 35px -32px;
+    background-color: transparent;
+}
+.volume .done {
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+    width: 3px;
+    height: 30%;
+    background: #02a8f3;
+}
+.volume:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 10px;
+    border: solid 7px transparent;
+    border-top-color: #f2f2f2;
+    z-index: 1;
+}
+.volume:before {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 10px;
+    border: solid 7px transparent;
+    border-top-color: #ccc;
+    z-index: 1;
+}
+
 
 /* slider */
 
 .time input {
   -webkit-appearance: none;
-  z-index: 1;
+  /*z-index: 1;*/
   position: absolute;
   left: -5px;
   top: -10px;

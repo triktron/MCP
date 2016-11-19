@@ -115,7 +115,10 @@
       <icon class="material-icons">shuffle</icon>
     </div>
     <div class="right-controls">
-      <icon class="material-icons">volume_up</icon>
+      <icon class="material-icons volume-bnt">volume_up</icon>
+      <div class="volume">
+        <div><div class="done"></div><input type="range" value=30 min=0 max=100 step=.00001 oninput="this.previousElementSibling.style.height = this.value + '%'" onchange="this.previousElementSibling.style.height = this.value + '%'"></div>
+      </div>
       <icon class="material-icons playlist-icon">queue_music</icon>
     </div>
   </div>

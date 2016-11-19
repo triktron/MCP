@@ -11,6 +11,18 @@ function init() {
   document.querySelector(".playlist-icon").addEventListener('click', () => {
     document.querySelector(".lower-part").classList.toggle("active")
   });
+  document.querySelector(".volume-bnt").addEventListener('click', () => {
+    document.querySelector(".volume").classList.toggle("open")
+  });
+  document.querySelector(".volume-bnt").addEventListener('mouseover', () => {
+    document.querySelector(".volume").classList.add("open")
+  });
+  document.querySelector(".volume-bnt").addEventListener('mouseleave', (evt) => {
+    if (!evt.relatedTarget.isSameNode(document.querySelector(".volume"))) document.querySelector(".volume").classList.remove("open")
+  });
+  document.querySelector(".volume").addEventListener('mouseleave', (evt) => {
+    document.querySelector(".volume").classList.remove("open")
+  });
 
   function b(a,b) {
     b.style.top = (a.getBoundingClientRect().top + a.getBoundingClientRect().height) + "px"
