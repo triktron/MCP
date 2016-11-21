@@ -65,9 +65,21 @@ function addAlbums() {
   	t: "Fight",
   	a: "Tokyo Machine"
   }];
+
   for (var i of albums) {
     document.querySelector(".dragend-page[panel=playlist]").appendChild(generateTile(i.u,i.t,i.a));
   }
+
+  window.adpts = new adaptiveSize({
+    container:document.querySelector(".dragend-page[panel=playlist]")
+  })
+  window.addEventListener('resize', function(event){
+   adpts.update()
+  });
+  window.addEventListener("orientationchange", function() {
+    console.log("orientationchange");
+    setTimeout(function(){adpts.update()},300)
+  });
 }
 
 window.addEventListener('load', init);
