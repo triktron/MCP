@@ -201,6 +201,38 @@ body:not(.search) {
   outline: none;
 }
 
+/* tiles */
+.tile .cover {
+  height: 140px;
+  background-size: 110% 110%;
+  background-position: center;
+}
+
+.tile .text {
+    height: 35px;
+}
+
+.tile {
+    border-radius: 2px;
+    background-color: #FFF;
+    height: 185px;
+    width: 140px;
+    overflow: hidden;
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
+    margin: 6px;
+    float: left;
+}
+.tile .text b {
+    font-size: 65%;
+    margin: 8px;
+}
+.tile .text small {
+    font-size: 50%;
+    margin: 8px;
+    margin-top: 3px;
+    position: absolute;
+}
+
 /* if page size */
 
 @media screen and ( max-width: 520px) {

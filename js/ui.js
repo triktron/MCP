@@ -44,6 +44,30 @@ function init() {
     }
   });
   b(document.querySelector(".card"),document.querySelector(".active-card"));
+  addAlbums()
+}
+
+function addAlbums() {
+  var albums = [{
+  	u: "https://blobcache.monstercat.com/blobs/a644f19d49c40aad66be572337793318edc01b9f",
+  	t: "Havoc",
+  	a: "Monstercat"
+  }, {
+  	u: "https://blobcache.monstercat.com/blobs/179c8a9d294220d2ca9c6dcbdf4c3705abd15f8e",
+  	t: "Killing giants",
+  	a: "Puppet & Murtagh"
+  }, {
+  	u: "https://blobcache.monstercat.com/blobs/6a190fffcba6d34a715b6b9682904f3092a3f6f6",
+  	t: "Rare",
+  	a: "Going Quatum"
+  }, {
+  	u: "https://blobcache.monstercat.com/blobs/7216d3fbf1443a78dc8cee29d9a5dfa0cbbec7bf",
+  	t: "Fight",
+  	a: "Tokyo Machine"
+  }];
+  for (var i of albums) {
+    document.querySelector(".dragend-page[panel=playlist]").appendChild(generateTile(i.u,i.t,i.a));
+  }
 }
 
 window.addEventListener('load', init);
